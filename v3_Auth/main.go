@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"strconv"
 	"time"
 
@@ -108,8 +109,8 @@ func (s *AuthService) Check(ctx context.Context, req *envoyAuthV3.CheckRequest) 
 	tokenString := res["authorization"]
 	log.Print(tokenString)
 	conf := &firebase.Config{
-		ServiceAccountID: "test-developers-chiper-develop@chiper-development.iam.gserviceaccount.com",
-		ProjectID:        "chiper-development",
+		ServiceAccountID: os.Getenv("SERVICE_ACCOUNT_ID"),
+		ProjectID:        os.Getenv("PROJECT_ID"),
 	}
 	app, err := firebase.NewApp(context.Background(), conf)
 	if err != nil {
