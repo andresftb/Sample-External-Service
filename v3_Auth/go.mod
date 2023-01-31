@@ -32,8 +32,7 @@ replace (
 )
 
 require (
-	firebase.google.com/go v3.13.0+incompatible // indirect
-	firebase.google.com/go/v4 v4.10.0 // indirect
+	firebase.google.com/go/v4 v4.10.0
 	github.com/datawire/ambassador/v2 v2.1.2
 	github.com/datawire/dlib v1.2.5-0.20211116212847-0316f8d7af2b
 	github.com/golang/protobuf v1.5.2
