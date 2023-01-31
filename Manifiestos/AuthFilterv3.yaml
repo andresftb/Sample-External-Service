@@ -1,0 +1,21 @@
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Filter
+metadata:
+  name: ext-filter-v3
+spec:
+  External:
+    proto: "grpc"
+    protocol_version: v3
+    auth_service: "grpc-auth.default:3000"
+---
+apiVersion: getambassador.io/v3alpha1
+kind: FilterPolicy
+metadata:
+  name: ext-filter-v3
+spec:
+  rules:
+  - host: "*"
+    path: /**
+    filters:
+    - name: ext-filter-v3
