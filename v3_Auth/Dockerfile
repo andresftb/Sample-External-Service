@@ -1,4 +1,4 @@
-FROM golang:1.15 as foundation
+FROM golang:1.19 as foundation
 
 WORKDIR /build
 COPY go.mod .
